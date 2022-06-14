@@ -1,0 +1,95 @@
+.recipe {
+   &-search {
+      display: block;
+
+      &-title {
+         color: var(--text-color);
+         margin-bottom: 1em;
+      }
+
+      &-item {
+         background-color: var(--primary-color);
+         display: inline-block;
+         padding: 0.5em 1em;
+         margin: 0 1em 1em 0;
+         color: #fff;
+         border-radius: 30px;
+         box-shadow: 0 3px 6px var(--shadow-color);
+         transform: translateX(100%);
+         opacity: 0;
+         animation: getAnimationDuration(0.2s) slideInRight forwards;
+      }
+
+      &-input {
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         height: 35px;
+      }
+
+      &-btn {
+         padding-inline: 0.75em;
+         border-radius: 0 5px 5px 0;
+      }
+      input {
+         height: 35px;
+         min-width: 250px;
+         padding: 0 0.5em;
+         border-radius: 5px 0 0 5px;
+         outline: none;
+         border: 1px solid #4d4d4d;
+      }
+   }
+
+   &-card {
+      .custom-image {
+         border-bottom-right-radius: 0;
+         border-bottom-left-radius: 0;
+      }
+
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px var(--shadow-color);
+
+      &-info {
+         padding: 15px;
+         background-color: var(--background-color);
+         .author-img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--background-light);
+            box-shadow: 0 3px 6px var(--shadow-color);
+            margin-top: -40px;
+            z-index: 2;
+         }
+      }
+
+      &-title {
+         font-size: 1.25em;
+         font-weight: bold;
+         margin: 0.25em 0 0.5em 0;
+         color: var(--text-color);
+      }
+
+      &-text {
+         color: var(--text-light);
+         font-size: 0.9em;
+         letter-spacing: 1px;
+      }
+
+      &-link {
+         color: var(--primary-color);
+         font-weight: bold;
+         font-size: 1em;
+         margin-top: 0.75em;
+         display: inline-block;
+      }
+   }
+
+   &-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5em;
+   }
+}

@@ -1,0 +1,36 @@
+.footer {
+   background-color: #0f0f0f;
+   color: #fff;
+   display: grid;
+   grid-template-columns: 2fr 1fr 1fr;
+   grid-gap: 1em;
+
+   &-section {
+      p {
+         opacity: 0.8;
+         margin-bottom: 0.5em;
+      }
+
+      p.footer-title {
+         font-size: 1.1em;
+         opacity: 1;
+         font-weight: bold;
+         margin-bottom: 1em;
+      }
+
+      @include point-down(medium) {
+         &:nth-child(1) {
+            grid-column: span 4;
+         }
+
+         &:nth-child(2),
+         &:nth-child(3) {
+            grid-column: span 2;
+         }
+      }
+   }
+
+   @include point-down(medium) {
+      grid-template-columns: repeat(4, 1fr);
+   }
+}

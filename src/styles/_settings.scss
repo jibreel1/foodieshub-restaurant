@@ -1,0 +1,44 @@
+.settings {
+   &-container {
+      box-shadow: 0 5px 10px var(--shadow-color);
+      padding: 1em;
+      border-radius: 5px;
+      border-left: 0.5em solid var(--primary-color);
+      background-color: var(--background-light);
+      margin-top: 1.5em;
+      display: flex;
+      gap: 1em;
+   }
+   &-option {
+      height: 3em;
+      width: 3em;
+      box-shadow: 0 3px 6px var(--shadow-color);
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.light {
+         background-color: #fff;
+      }
+
+      &.dark {
+         background-color: rgb(29, 29, 29);
+      }
+
+      .check {
+         height: 2em;
+         width: 2em;
+         background-color: var(--primary-color);
+         box-shadow: 0 3px 6px var(--shadow-color);
+         border-radius: 50%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         svg {
+            font-size: 1.2em;
+         }
+      }
+   }
+}

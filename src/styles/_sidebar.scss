@@ -1,0 +1,46 @@
+.sidebar {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 250px;
+   background-color: var(--background-color);
+   box-shadow: 0 0 0 100vw var(--shadow-color), 3px 0 8px var(--shadow-color);
+   animation: getAnimationDuration(0.3s) slideInLeft;
+   z-index: 999;
+
+   @include point-down(medium) {
+      display: block;
+   }
+
+   &-link {
+      display: block;
+      padding: 0.5em 1em;
+      border-left: 0.4em solid transparent;
+      margin-bottom: 1em;
+      color: var(--text-color);
+      font-size: 1.1em;
+      transform: translateX(-100%);
+      animation: getAnimationDuration(0.3s) slideInLeft forwards;
+      @for $i from 1 through 3 {
+         &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.1}s;
+         }
+      }
+
+      &:hover {
+         border-left: 0.4em solid var(--primary-color);
+         background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      &.active {
+         border-left: 0.4em solid var(--primary-color);
+      }
+
+      svg {
+         width: 1.2em;
+         margin-right: 0.5em;
+      }
+   }
+}
